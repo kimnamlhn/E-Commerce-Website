@@ -1,0 +1,81 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">NKim</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            data-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item scrollto" href="#new-movie">New Movie</a></li>
+            <li><a class="dropdown-item scrollto" href="#most-viewed">Most Viewed</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item scrollto" href="#top-rated">Top Rated</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contacts">Contacts</a>
+        </li>
+      </ul>
+
+      <form class="d-flex ml-3 mr-auto">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success ml-2" type="submit">Search</button>
+      </form>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+          data-toggle="dropdown" aria-expanded="false">
+          Welcom, <b>Customer!</b>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="/user/profile">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              Account Profile</a></li>
+          <li><a class="dropdown-item" href="/user/profile">
+              <i class="fa fa-cogs" aria-hidden="true"></i>
+              Settings</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item logout" role="button" href="javascript:;">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+              Logout</a></li>
+          <form action="/account/logout" method="post" id="frmLogout" name="frmLogout">
+
+          </form>
+
+        </ul>
+      </li>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/account/login">
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+            Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/account/register">
+            <i class="fa fa-user-plus" aria-hidden="true"></i>
+            Register</a>
+        </li>
+
+      </ul>
+
+
+    </div>
+  </div>
+</nav>

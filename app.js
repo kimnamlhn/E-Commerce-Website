@@ -1,22 +1,20 @@
 const express = require('express')
-var exphbs  = require('express-handlebars');
-
 const app = express()
 const port = 3000
 
 
-app.engine('hbs', exphbs(
-  {
-    extname: '.hbs',
-    layoutsDir: './views/_layout'
-  }
-));
-app.set('view engine', 'hbs');
+//set static forder public
+app.use(express.static(__dirname + '/public'));
   
 
 app.get('/', function (req, res) {
   res.render('home');
 });
+
+//middle wares 
+require('./middlewares/bodyparse.mdw')(app);
+require('./middlewares/view.mdw')(app);
+
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
