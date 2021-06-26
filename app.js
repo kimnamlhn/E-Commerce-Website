@@ -14,6 +14,7 @@ app.get('/', function (req, res) {
 //middle wares 
 require('./middlewares/bodyparse.mdw')(app);
 require('./middlewares/view.mdw')(app);
+require('./middlewares/error.mdw')(app);
 
 
 app.listen(port, () => {
