@@ -11,8 +11,9 @@ app.get('/', function (req, res) {
   res.render('home');
 });
 
-//middle wares 
+//middlewares 
 require('./middlewares/bodyparse.mdw')(app);
+require('./middlewares/routes.mdw')(app);
 require('./middlewares/view.mdw')(app);
 require('./middlewares/error.mdw')(app);
 
