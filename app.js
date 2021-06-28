@@ -18,6 +18,7 @@ require('./middlewares/view.mdw')(app);
 require('./middlewares/error.mdw')(app);
 
 
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
   })
