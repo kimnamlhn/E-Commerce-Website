@@ -1,1 +1,207 @@
-<h1>product detail</h1>
+<div class="all-title-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Detail</h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                    <li class="breadcrumb-item active">Detail</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="shop-detail-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-5 col-md-6">
+                <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active"> <img class="d-block w-100" src=cover alt="First slide">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-7 col-md-6">
+                <div class="single-product-details">
+                    <h2>title</h2>
+                    <h5>basePrice</h5>
+                    <h4>Tóm tắt sản phẩm:</h4>
+                    <p>detail</p>
+
+                    <ul>
+                        <li>
+                            <div class="form-group quantity-box">
+                                <label class="control-label">Số lượng sản phẩm có sẵn</label>
+                                <input class="form-control" disabled value="stock" min="0" max="20" type="number"
+                                    id="stock">
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <h4 id="seen" style="margin-top:-30px;">Lượt xem: seen</h4>
+                    <h4 id="sold" style="margin-top:-2px;margin-bottom: 30px;">Đã bán: sold</h4>
+                    <div class="price-box-bar">
+                        <div class="cart-and-bay-btn">
+                            <a class="btn hvr-hover" data-fancybox-close="" href="#"
+                                onclick="return addProductAndGoToCart(json cart._id,json _id)">Mua hàng</a>
+                            <a class="btn hvr-hover" data-fancybox-close="" href="#"
+                                onclick=" return addProductToCartFromDetail(json cart._id,json _id)">Thêm vào
+                                giỏ</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <div class="card card-outline-secondary my-4">
+                <div class="card-header">
+                    <h2>Nhận xét sản phẩm</h2>
+                </div>
+                <div class="card-body" style="min-width: 1129px;" id="comment-div">
+                    #each comments
+                    <div class="media mb-3">
+                        <div class="mr-2">
+                            <img class="rounded-circle border p-1" src="this.cover" alt="Generic placeholder image"
+                                width="64px" height="64px">
+                        </div>
+                        <div class="media-body">
+                            <p>comment</p>
+                            <small class="text-muted">Đăng bởi accountusername</small>
+                            <br>
+                            <small class="text-muted">date</small>
+                        </div>
+                    </div>
+                    <hr>
+                    /each
+                    <div>
+                        #if user
+                        <input style="min-width: 50px; float:left; height: 40px; margin-right:10px" type="hidden"
+                            placeholder="Hãy nhập tên của bạn" id="username">
+                        <input style="min-width: 900px; float:left; height: 40px" type="text"
+                            placeholder="Hãy nhập bình luận của bạn vào đây" id="comment">
+                        <button style="float:right ;font-weight: 700;color: #ffffff" class="btn hvr-hover"
+                            onclick="commend(json user)"> Nhận xét</button>
+                        else
+                        <input style="min-width: 50px; float:left; height: 40px; margin-right:10px" type="text"
+                            placeholder="Hãy nhập tên của bạn" id="username">
+                        <input style="min-width: 800px; float:left; height: 40px" type="text"
+                            placeholder="Hãy nhập bình luận của bạn vào đây" id="comment">
+                        <button style="float:right ;font-weight: 700;color: #ffffff" class="btn hvr-hover"
+                            onclick="commend(json user)"> Nhận xét</button>
+                        /if
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="paginate-center" id="pagination-comment">
+            #if pageCount
+            <ul>
+                #paginate pagination type="first"
+                <li #if disabledclass="li-paginate" /if style="float:left;" class="li-paginate">
+                    !-- <a href="?../queryp=n">
+                        <<< /a> --
+                            <a href="#" onclick="return commentPagination(json n,json ../user)">
+                                << </a>
+                </li>
+                /paginate
+                #paginate pagination type="previous"
+                <li #if disabledclass="li-paginate" /ifstyle="float:left;" class="li-paginate">
+                    !-- <a href="?../queryp=n">
+                        << /a> --
+                            <a href="#" onclick="return commentPagination(json n,json ../user)">
+                                < </a>
+                </li>
+                /paginate
+                #paginate pagination type="middle" limit="5"
+                <li #if active class=" activate" /if style="float:left;" class="li-paginate">
+                    !-- <a href="?../queryp=n">n</a> --
+                    <a href="#" onclick="return commentPagination(json n,json ../user)">n</a>
+                </li>
+                /paginate
+                #paginate pagination type="next"
+                <li #if disabledclass="li-paginate" /ifstyle="float:left;" class="li-paginate">
+                    !-- <a href="?../queryp=n">> </a> --
+                    <a href="#" onclick="return commentPagination(json n,json ../user)">></a>
+                </li>
+                /paginate
+                #paginate pagination type="last"
+                <li #if disabledclass="li-paginate" /ifstyle="float:left;" class="li-paginate">
+                    !-- <a href="?../queryp=n">>></a> --
+                    <a href="#" onclick="return commentPagination(json n,json ../user)">>></a>
+                </li>
+                /paginate
+            </ul>
+
+            /if
+        </div>
+
+        <div class="row my-5">
+            <div class="col-lg-12">
+                <div class="title-all text-center">
+                    <h1>Sách đề cử</h1>
+                    <p>Sách cùng thể loại</p>
+                </div>
+                <div class="featured-products-box owl-carousel owl-theme">
+                    #each featuredBooks
+                    <div class="item">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <img src=cover alt="Image" height="266.25">
+                            </div>
+                            <div class="why-text" style="text-align:center">
+                                <a href="/books/detail/_id">
+                                    <h4 class="link">title</h4>
+                                </a>
+                                <h5>basePrice</h5>
+                            </div>
+                        </div>
+                    </div>
+                    /each
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+<script type="text/x-handlebars-template" id="comments-template">
+     <div class="card-body" style="min-width: 1129px;">
+                        \#each comments
+                        <div class="media mb-3">
+                            <div class="mr-2"> 
+                                <img class="rounded-circle border p-1" src="\this.cover" alt="Generic placeholder image" width="64px" height="64px">
+                            </div>
+                            <div class="media-body">
+                                <p>\comment</p>
+                                <small class="text-muted">Posted by \account \username</small>
+                                <br>
+                                 <small class="text-muted">\date</small>
+                            </div>
+                        </div>
+                        <hr >
+                        \/each
+                        <div>
+                            \#if user
+                                <input style="min-width: 50px; float:left; height: 40px; margin-right:10px" type="hidden" placeholder="Hãy nhập tên của bạn" id="username">
+                                <input style="min-width: 900px; float:left; height: 40px" type="text" placeholder="Hãy nhập bình luận của bạn vào đây" id="comment">
+                                <button style="float:right ;font-weight: 700;color: #ffffff" class="btn hvr-hover" onclick="commend(json user)"> Nhận xét</button>
+                            \else
+                                <input style="min-width: 50px; float:left; height: 40px; margin-right:10px" type="text" placeholder="Hãy nhập tên của bạn" id="username">
+                                <input style="min-width: 800px; float:left; height: 40px" type="text" placeholder="Hãy nhập bình luận của bạn vào đây" id="comment">
+                                <button style="float:right ;font-weight: 700;color: #ffffff" class="btn hvr-hover" onclick="commend(json user)"> Nhận xét</button>
+                            \/if
+                        </div>
+</script>
