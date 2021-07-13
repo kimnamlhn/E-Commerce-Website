@@ -1,5 +1,8 @@
 .DS_Store
 
+#folder packets
+node_modules
+
 # Images
 images/avatars/
 images/captchas/
