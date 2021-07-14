@@ -1,10 +1,4 @@
-/*
 
-TemplateMo 546 Sixteen Clothing
-
-https://templatemo.com/tm-546-sixteen-clothing
-
-*/
 body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
@@ -73,6 +67,12 @@ a.filled-button {
 a.filled-button:hover {
 	background-color: #121212;
 	color: #fff;
+}
+
+
+.download-app{
+    width:153px;
+    height: 46px;
 }
 
 .section-heading {
