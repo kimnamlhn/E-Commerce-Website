@@ -18,9 +18,9 @@
         </div>
         <div class="card mt-3">
           <div class="list-group" id="list-tab" role="tablist">
-            <a class="list-group-item list-group-item-action active" href="/user/profile">Thông tin cá nhân</a>
-            <a class="list-group-item list-group-item-action" href="/user/ticket-booked">Đơn hàng đã đặt</a>
-            <a class="list-group-item list-group-item-action" href="/user/ticket-history">Lịch sử mua hàng</a>
+            <a class="list-group-item list-group-item-action active" href="/user">Thông tin cá nhân</a>
+            <a class="list-group-item list-group-item-action" href="/user/order_placed">Đơn hàng đã đặt</a>
+            <a class="list-group-item list-group-item-action" href="/user/purchase_history">Lịch sử mua hàng</a>
           </div>
         </div>
       </div>
@@ -48,7 +48,8 @@
                     <td class="pt-3-half" contenteditable="true">1</td>
                     <td class="pt-3-half" contenteditable="true">Email</td>
                     <td class="pt-3-half" contenteditable="true">
-                      <input type="email" class="form-control" id="editInputEmail" name="email" placeholder="{{user.email}}">
+                      <input type="email" class="form-control" id="editInputEmail" name="email"
+                        placeholder="{{user.email}}">
                     </td>
                     <td>
                       <span class="table-remove"><button type="submit"
@@ -70,7 +71,7 @@
                     <td class="pt-3-half" contenteditable="true">3</td>
                     <td class="pt-3-half" contenteditable="true">Phone</td>
                     <td class="pt-3-half" contenteditable="true">
-                      <input type="text" class="form-control" placeholder="{{user.phone}}" id="txtphone" name="phone">
+                      <input type="text" class="form-control" placeholder="user.phone" id="txtphone" name="phone">
                     </td>
                     <td>
                       <span class="table-remove"><button type="submit"
