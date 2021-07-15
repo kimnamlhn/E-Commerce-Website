@@ -16,8 +16,8 @@ router.get('/purchase_history', async function (req, res) {
   })
 
 
-router.get('/cart', async function (req, res) {
-    res.render('user/purchase_history');
+router.get('/checkout', async function (req, res) {
+    res.render('user/checkout');
   })
 
 
