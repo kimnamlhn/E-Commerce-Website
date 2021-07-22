@@ -1,207 +1,229 @@
-<div class="all-title-box">
+<!-- Chi tiết sản phẩm-->
+<div class="products">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <h2>Detail</h2>
-                <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                    <li class="breadcrumb-item active">Detail</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="shop-detail-box-main">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-5 col-lg-5 col-md-6">
-                <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active"> <img class="d-block w-100" src=cover alt="First slide">
-                        </div>
-                    </div>
+            <div class="col-md-4 col-xs-12">
+                <div>
+                    <img src="/assets/images/product_01.jpg" alt="" class="img-fluid wc-image">
                 </div>
-            </div>
-            <div class="col-xl-7 col-lg-7 col-md-6">
-                <div class="single-product-details">
-                    <h2>title</h2>
-                    <h5>basePrice</h5>
-                    <h4>Tóm tắt sản phẩm:</h4>
-                    <p>detail</p>
-
-                    <ul>
-                        <li>
-                            <div class="form-group quantity-box">
-                                <label class="control-label">Số lượng sản phẩm có sẵn</label>
-                                <input class="form-control" disabled value="stock" min="0" max="20" type="number"
-                                    id="stock">
-                            </div>
-                        </li>
-
-                    </ul>
-
-                    <h4 id="seen" style="margin-top:-30px;">Lượt xem: seen</h4>
-                    <h4 id="sold" style="margin-top:-2px;margin-bottom: 30px;">Đã bán: sold</h4>
-                    <div class="price-box-bar">
-                        <div class="cart-and-bay-btn">
-                            <a class="btn hvr-hover" data-fancybox-close="" href="#"
-                                onclick="return addProductAndGoToCart(json cart._id,json _id)">Mua hàng</a>
-                            <a class="btn hvr-hover" data-fancybox-close="" href="#"
-                                onclick=" return addProductToCartFromDetail(json cart._id,json _id)">Thêm vào
-                                giỏ</a>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-
-        <div class="row my-5">
-            <div class="card card-outline-secondary my-4">
-                <div class="card-header">
-                    <h2>Nhận xét sản phẩm</h2>
-                </div>
-                <div class="card-body" style="min-width: 1129px;" id="comment-div">
-                    #each comments
-                    <div class="media mb-3">
-                        <div class="mr-2">
-                            <img class="rounded-circle border p-1" src="this.cover" alt="Generic placeholder image"
-                                width="64px" height="64px">
-                        </div>
-                        <div class="media-body">
-                            <p>comment</p>
-                            <small class="text-muted">Đăng bởi accountusername</small>
-                            <br>
-                            <small class="text-muted">date</small>
-                        </div>
-                    </div>
-                    <hr>
-                    /each
-                    <div>
-                        #if user
-                        <input style="min-width: 50px; float:left; height: 40px; margin-right:10px" type="hidden"
-                            placeholder="Hãy nhập tên của bạn" id="username">
-                        <input style="min-width: 900px; float:left; height: 40px" type="text"
-                            placeholder="Hãy nhập bình luận của bạn vào đây" id="comment">
-                        <button style="float:right ;font-weight: 700;color: #ffffff" class="btn hvr-hover"
-                            onclick="commend(json user)"> Nhận xét</button>
-                        else
-                        <input style="min-width: 50px; float:left; height: 40px; margin-right:10px" type="text"
-                            placeholder="Hãy nhập tên của bạn" id="username">
-                        <input style="min-width: 800px; float:left; height: 40px" type="text"
-                            placeholder="Hãy nhập bình luận của bạn vào đây" id="comment">
-                        <button style="float:right ;font-weight: 700;color: #ffffff" class="btn hvr-hover"
-                            onclick="commend(json user)"> Nhận xét</button>
-                        /if
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="paginate-center" id="pagination-comment">
-            #if pageCount
-            <ul>
-                #paginate pagination type="first"
-                <li #if disabledclass="li-paginate" /if style="float:left;" class="li-paginate">
-                    !-- <a href="?../queryp=n">
-                        <<< /a> --
-                            <a href="#" onclick="return commentPagination(json n,json ../user)">
-                                << </a>
-                </li>
-                /paginate
-                #paginate pagination type="previous"
-                <li #if disabledclass="li-paginate" /ifstyle="float:left;" class="li-paginate">
-                    !-- <a href="?../queryp=n">
-                        << /a> --
-                            <a href="#" onclick="return commentPagination(json n,json ../user)">
-                                < </a>
-                </li>
-                /paginate
-                #paginate pagination type="middle" limit="5"
-                <li #if active class=" activate" /if style="float:left;" class="li-paginate">
-                    !-- <a href="?../queryp=n">n</a> --
-                    <a href="#" onclick="return commentPagination(json n,json ../user)">n</a>
-                </li>
-                /paginate
-                #paginate pagination type="next"
-                <li #if disabledclass="li-paginate" /ifstyle="float:left;" class="li-paginate">
-                    !-- <a href="?../queryp=n">> </a> --
-                    <a href="#" onclick="return commentPagination(json n,json ../user)">></a>
-                </li>
-                /paginate
-                #paginate pagination type="last"
-                <li #if disabledclass="li-paginate" /ifstyle="float:left;" class="li-paginate">
-                    !-- <a href="?../queryp=n">>></a> --
-                    <a href="#" onclick="return commentPagination(json n,json ../user)">>></a>
-                </li>
-                /paginate
-            </ul>
-
-            /if
-        </div>
-
-        <div class="row my-5">
-            <div class="col-lg-12">
-                <div class="title-all text-center">
-                    <h1>Sách đề cử</h1>
-                    <p>Sách cùng thể loại</p>
-                </div>
-                <div class="featured-products-box owl-carousel owl-theme">
-                    #each featuredBooks
-                    <div class="item">
-                        <div class="products-single fix">
-                            <div class="box-img-hover">
-                                <img src=cover alt="Image" height="266.25">
-                            </div>
-                            <div class="why-text" style="text-align:center">
-                                <a href="/books/detail/_id">
-                                    <h4 class="link">title</h4>
-                                </a>
-                                <h5>basePrice</h5>
-                            </div>
-                        </div>
-                    </div>
-                    /each
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-
-
-
-
-<script type="text/x-handlebars-template" id="comments-template">
-     <div class="card-body" style="min-width: 1129px;">
-                        \#each comments
-                        <div class="media mb-3">
-                            <div class="mr-2"> 
-                                <img class="rounded-circle border p-1" src="\this.cover" alt="Generic placeholder image" width="64px" height="64px">
-                            </div>
-                            <div class="media-body">
-                                <p>\comment</p>
-                                <small class="text-muted">Posted by \account \username</small>
-                                <br>
-                                 <small class="text-muted">\date</small>
-                            </div>
-                        </div>
-                        <hr >
-                        \/each
+                <br>
+                <div class="row">
+                    <div class="col-sm-4 col-xs-6">
                         <div>
-                            \#if user
-                                <input style="min-width: 50px; float:left; height: 40px; margin-right:10px" type="hidden" placeholder="Hãy nhập tên của bạn" id="username">
-                                <input style="min-width: 900px; float:left; height: 40px" type="text" placeholder="Hãy nhập bình luận của bạn vào đây" id="comment">
-                                <button style="float:right ;font-weight: 700;color: #ffffff" class="btn hvr-hover" onclick="commend(json user)"> Nhận xét</button>
-                            \else
-                                <input style="min-width: 50px; float:left; height: 40px; margin-right:10px" type="text" placeholder="Hãy nhập tên của bạn" id="username">
-                                <input style="min-width: 800px; float:left; height: 40px" type="text" placeholder="Hãy nhập bình luận của bạn vào đây" id="comment">
-                                <button style="float:right ;font-weight: 700;color: #ffffff" class="btn hvr-hover" onclick="commend(json user)"> Nhận xét</button>
-                            \/if
+                            <img src="/assets/images/product_01.jpg" alt="" class="img-fluid">
                         </div>
-</script>
+                        <br>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                        <div>
+                            <img src="/assets/images/product_01.jpg" alt="" class="img-fluid">
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                        <div>
+                            <img src="/assets/images/product_01.jpg" alt="" class="img-fluid">
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8 col-xs-12">
+                <form action="#" method="post" class="form">
+                    <h2>Lorem ipsum dolor sit amet.</h2>
+
+                    <br>
+
+                    <p class="lead">
+                        <strong>Giá tiền: </strong><strong class="text-primary">$779.00</strong>
+                    </p>
+
+                    <p class="lead mt-2">
+                        <strong>Số lượng đã bán: 3</strong>
+                    </p>
+
+                    <p class="lead mt-2">
+                        <strong>Sản phẩm còn lại: 15 </strong>
+                    </p>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label class="control-label">Size</label>
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option value="0">S</option>
+                                    <option value="1">L</option>
+                                    <option value="2">M</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <label class="control-label">Số lượng</label>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="1">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <a href="#" class="btn btn-primary btn-block">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Chi tiết sản phẩm -->
+
+<!-- tương tác với khách -->
+<div class="interactive">
+    <nav class="ml-5">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-des" data-toggle="tab" href="#nav-home" role="tab"
+                aria-controls="nav-home" aria-selected="true">Mô tả chi tiết</a>
+            <a class="nav-item nav-link" id="nav-comments" data-toggle="tab" href="#nav-profile" role="tab"
+                aria-controls="nav-profile" aria-selected="false">Bình luận</a>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active mt-3 ml-5" id="nav-home" role="tabpanel" aria-labelledby="nav-des">Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Odit voluptates provident illo sapiente dolor rem
+            similique quia, cumque mollitia vitae pariatur magnam delectus esse sunt inventore itaque dicta numquam enim
+            voluptate aliquam nisi quis! Magni similique eos architecto necessitatibus quibusdam, dolorem, labore at eum
+            laudantium suscipit non alias impedit modi?</div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-comments">
+            <div class="ml-5">
+                <div class="card text-left">
+                    <img class="card-img-top" src="holder.js/100px180/" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Nguyễn Khánh A</h4>
+                        <p class="card-text">Sản phẩm rất tốt, rất đúng giá tiền</p>
+                    </div>
+                </div>
+                <div class="card text-left">
+                    <img class="card-img-top" src="holder.js/100px180/" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Lê Nguyễn Anh</h4>
+                        <p class="card-text">Ủng hộ shop</p>
+                    </div>
+                </div>
+                <div class="card text-left">
+                    <img class="card-img-top" src="holder.js/100px180/" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Hoàng Thị Ngọc</h4>
+                        <p class="card-text">Sản phẩm rất đẹp, đáng mua</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end tương tác với khách -->
+
+
+<!-- Sản phẩm tương tự -->
+<div class="latest-products mb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Sản phẩm tương tự</h2>
+                    <a href="/products">Xem tất cả <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-item">
+                    <a href="#"><img src="/assets/images/product_02.jpg" alt=""></a>
+                    <div class="down-content">
+                        <a href="#">
+                            <h4>Tittle goes here</h4>
+                        </a>
+                        <h6>$30.25</h6>
+                        <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                        <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                        </ul>
+                        <span>Reviews (21)</span>
+                    </div>
+                    <div class="mb-3 ml-5">
+                        <button type="button" class="btn btn-primary">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            Chi tiết </button>
+                        <button type="button" class="btn btn-danger">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            Thêm vào giỏ </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-item">
+                    <a href="#"><img src="/assets/images/product_03.jpg" alt=""></a>
+                    <div class="down-content">
+                        <a href="#">
+                            <h4>Tittle goes here</h4>
+                        </a>
+                        <h6>$20.45</h6>
+                        <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                        <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                        </ul>
+                        <span>Reviews (36)</span>
+                    </div>
+                    <div class="mb-3 ml-5">
+                        <button type="button" class="btn btn-primary">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            Chi tiết </button>
+                        <button type="button" class="btn btn-danger">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            Thêm vào giỏ </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-item">
+                    <a href="#"><img src="/assets/images/product_04.jpg" alt=""></a>
+                    <div class="down-content">
+                        <a href="#">
+                            <h4>Tittle goes here</h4>
+                        </a>
+                        <h6>$15.25</h6>
+                        <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                        <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                        </ul>
+                        <span>Reviews (48)</span>
+                    </div>
+                    <div class="mb-3 ml-5">
+                        <button type="button" class="btn btn-primary">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            Chi tiết </button>
+                        <button type="button" class="btn btn-danger">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            Thêm vào giỏ </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end sản phẩm tương tự -->
