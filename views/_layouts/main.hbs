@@ -12,15 +12,21 @@
 
     <!-- link font awesome-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    
-    <!-- link font -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    
+
+    <!-- link font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+
     <!-- css resource -->
     {{> css_section}}
     <!-- end css resource -->
+
+
+    <!-- css section -->
+    {{{_sections.css}}}
+    <!-- end css section -->
 
 
 </head>
@@ -39,6 +45,10 @@
     <!--footer-->
     {{> footer}}
     <!--end footer-->
+
+    <!--js section-->
+    {{{_sections.js}}}
+    <!--end js section-->
 
 
     <!--js resource-->
