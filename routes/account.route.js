@@ -42,12 +42,12 @@ router.get('/register', async function (req, res) {
 router.post('/register', async function (req, res) {
         //check ton tai chua
         const flags = await userModel.singleByEmail(req.body.email);
-        if (flags.length !== 0) {
+
+        if (flags != null && flags.length !== 0) {
                 return res.render('guest/register', {
                     err_message: 'Email này đã được sử dụng.'
                 });
             }
-
 
         const hashPass = bcrypt.hashSync(req.body.password, 8);
         const entity = {
@@ -61,7 +61,10 @@ router.post('/register', async function (req, res) {
         await userModel.add(entity);
         // alert('call');
     
-        res.redirect('/');
+        // res.redirect('/');
+        return res.render('guest/register', {
+            success_message: 'Đăng ký tài khoản thành công'
+        });
 });
 
 
