@@ -1,17 +1,18 @@
 const express = require('express');
 const router = express.Router();
+const authUser = require('../middlewares/authUser.mdw')
 
-router.get('/', async function (req, res) {
+router.get('/', authUser, async function (req, res) {
     res.render('user/profile');
   })
 
 // danh sách sản phẩm đã đặt và tình trạng
-router.get('/order_placed', async function (req, res) {
+router.get('/order_placed', authUser, async function (req, res) {
     res.render('user/order_placed');
   })
 
 // lịch sử đặt hàng
-router.get('/purchase_history', async function (req, res) {
+router.get('/purchase_history', authUser, async function (req, res) {
     res.render('user/purchase_history');
   })
 
