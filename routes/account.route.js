@@ -34,7 +34,6 @@ router.post('/login', async function (req, res) {
         console.log('123123');
         console.log(req.session.authUser);
         console.log(req.session.authenticated);
-
     
         
         res.redirect('/');
