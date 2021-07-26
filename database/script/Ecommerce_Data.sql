@@ -14,21 +14,21 @@ insert into customer values(NULL,'lhuynh@gmail.com','$2y$10$JRAxIxXqzdeh8sZDW1Nw
 
 
 /* data product */
-insert into product values(NULL,'Giày snaker trắng nam nữ','[Mã FATHANG5 giảm 10K đơn 50K] Gìay Sneaker Trắng Nam Nữ Đế Êm Thoáng Khí Hàng Loại 1 ( Freeship+ Full box + Quà tặng)', 50000, 20, 'assets/images/product_01.jpg' );
-insert into product values(NULL,' Nón Len beanie Slyder SS1','Nón Len beanie slyder tag
+insert into product values(NULL,'Giày snaker nam nữ','[Mã FATHANG5 giảm 10K đơn 50K] Gìay Sneaker Trắng Nam Nữ Đế Êm Thoáng Khí Hàng Loại 1 ( Freeship+ Full box + Quà tặng)', 50000, 20, '/assets/images/product_01.jpg' );
+insert into product values(NULL,' Nón Len Slyder SS1','Nón Len beanie slyder tag
 - Len dệt chuẩn dày với độ co dãn tốt
-- Form phù hợp với mọi lứa tuổi', 30000, 10, 'assets/images/product_02.jpg' );
-insert into product values(NULL,'Áo Thun Tay Lỡ Streetwear','Tee Basic Slyder Ss1 - Áo Thun Tay Lỡ Streetwear
+- Form phù hợp với mọi lứa tuổi', 30000, 10, '/assets/images/product_02.jpg' );
+insert into product values(NULL,'Áo Thun Tay','Tee Basic Slyder Ss1 - Áo Thun Tay Lỡ Streetwear
 Chất liệu : 
 - Cotton 100% chính phẩm, bo cổ dày dặn
 - Nhãn mạc cấu tạo Local Brand Slyder
 Kích Thước :
 - S : Dài 71 Ngang 56 ( Cao dưới 1M64 Nặng dưới 65kg )
 - M : Dài 74 Ngang 58 ( Cao 1M62 > 1M72 - Nặng dưới 90kg )
-- L : Dài 77 Ngang 60 ( Cao Trên 1M72 > 1M90 - Nặng dưới 120kg )', 100000, 10, 'assets/images/product_03.jpg' );
-insert into product values(NULL,'Nón Len đen trắng','[Mã FATHANG5 giảm 10K đơn 50K] Nón len đen Trắng Nam Nữ Đế Êm Thoáng Khí Hàng Loại 1 ( Freeship+ Full box + Quà tặng)', 120000, 300, 'assets/images/product_04.jpg' );
-insert into product values(NULL,'Mũ lưỡi trai thời trang','[Mã FATHANG5 giảm 10K đơn 50K] Mũ lưỡi trai êm Thoáng Khí Hàng Loại 1 ( Freeship+ Full box + Quà tặng)', 150000, 4, 'assets/images/product_05.jpg' );
-insert into product values(NULL,'Mũ thời trang mùa đông','[Mã FATHANG5 giảm 10K đơn 50K] Mũ thời trang mùa đông êm Thoáng Khí Hàng Loại 1 ( Freeship+ Full box + Quà tặng)', 150000, 4, 'assets/images/product_06.jpg' );
+- L : Dài 77 Ngang 60 ( Cao Trên 1M72 > 1M90 - Nặng dưới 120kg )', 100000, 10, '/assets/images/product_03.jpg' );
+insert into product values(NULL,'Nón Len đen trắng','[Mã FATHANG5 giảm 10K đơn 50K] Nón len đen Trắng Nam Nữ Đế Êm Thoáng Khí Hàng Loại 1 ( Freeship+ Full box + Quà tặng)', 120000, 300, '/assets/images/product_04.jpg' );
+insert into product values(NULL,'Mũ lưỡi trai thời trang','[Mã FATHANG5 giảm 10K đơn 50K] Mũ lưỡi trai êm Thoáng Khí Hàng Loại 1 ( Freeship+ Full box + Quà tặng)', 150000, 4, '/assets/images/product_05.jpg' );
+insert into product values(NULL,'Mũ thời trang mùa đông','[Mã FATHANG5 giảm 10K đơn 50K] Mũ thời trang mùa đông êm Thoáng Khí Hàng Loại 1 ( Freeship+ Full box + Quà tặng)', 150000, 4, '/assets/images/product_06.jpg' );
 
 
 

@@ -9,14 +9,14 @@ module.exports = {
     add : async function(entity) {
         return await db.add(entity, TBL_CUSTOMER);
     },
-    update : async function(newVal, idUser, attribute) {
+    update : async function(newVal, idCustomer, attribute) {
         const sql = `
-        update ${TBL_CUSTOMER} set ${attribute} = '${newVal}' where idUser = ${idUser}
+        update ${TBL_CUSTOMER} set ${attribute} = '${newVal}' where idUser = ${idCustomer}
         `;
         return await db.load(sql);    
     },
-    single: async function(idUser){
-        return await db.load(`select * from ${TBL_CUSTOMER} where id = ${idUser} `);
+    single: async function(idCustomer){
+        return await db.load(`select * from ${TBL_CUSTOMER} where id = ${idCustomer} `);
 
     },
 
