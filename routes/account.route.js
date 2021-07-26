@@ -13,9 +13,9 @@ router.post('/login', async function (req, res) {
         console.log(user);
 
         //kiem tra ton tai hay khong bang email
-        if(user.length === 0){
+        if(user === null){
             return res.render('guest/login',{
-                err: 'Invalid username or password.'
+                err_message: 'Email không tồn tại'
             })
         };
         
@@ -23,7 +23,7 @@ router.post('/login', async function (req, res) {
         var flags = bcrypt.compareSync(req.body.password, user.password); // true
         if(flags === false){
             return res.render('guest/login',{
-                err: 'Invalid username or password.'
+                err_message: 'Sai email hoặc mật khẩu'
             })
         };
         
