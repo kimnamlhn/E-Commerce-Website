@@ -14,7 +14,34 @@ insert into customer values(NULL,'lhuynh@gmail.com','$2y$10$JRAxIxXqzdeh8sZDW1Nw
 
 
 /* data product */
-insert into product values(NULL,'Giày snaker nam nữ','[Mã FATHANG5 giảm 10K đơn 50K] Gìay Sneaker Trắng Nam Nữ Đế Êm Thoáng Khí Hàng Loại 1 ( Freeship+ Full box + Quà tặng)', 50000, 20, '/assets/images/product_01.jpg' );
+insert into product values(NULL,'Giày snaker nam nữ','    <div>
+        <div>
+            <h4> Giày Thể Thao nam nữ </h4>
+            <ul>
+                <li> Đủ size Nam nữ : 36 - 43
+                </li>
+                <li> Cam kết 100% sản phẩm Y HÌNH (hình do shop tự chụp). Tuy nhiên màu sắc có chênh lệch chút ít do ánh
+                    sáng.
+                </li>
+                <li> Anh/chị em chọn mẫu rồi chọn đúng size, MUA 2 ĐÔI KHÁC SIZE thì vui lòng cho từng size THÊM VÀO GIỎ
+                    HÀNG rồi vào giỏ hàng chọn MUA NGAY.
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h4>
+                Mô Tả Sản Phẩm:
+            </h4>
+            <ul>
+                <li>
+                    Giày được làm bằng 100% chất liệu da thật, mềm và mịn.
+                </li>
+                <li>
+                    Phần đế bằng cao su đúc nguyên khối rất chắc chắn và bền.
+                </li>
+            </ul>
+        </div>
+    </div>', 50000, 20, '/assets/images/product_01.jpg' );
 insert into product values(NULL,' Nón Len Slyder SS1','Nón Len beanie slyder tag
 - Len dệt chuẩn dày với độ co dãn tốt
 - Form phù hợp với mọi lứa tuổi', 30000, 10, '/assets/images/product_02.jpg' );
@@ -32,15 +59,7 @@ insert into product values(NULL,'Mũ thời trang mùa đông','[Mã FATHANG5 gi
 
 
 
-/* data payment */
-insert into payment values(NULL,1, '2021-06-13', 50000, 1 , 1);
-insert into payment values(NULL,2, '2021-07-24', 250000, 2, 2);
-insert into payment values(NULL,3, '2021-07-7', 130000, 2, 1);
-insert into payment values(NULL,2, '2021-05-8', 120000, 3, 2);
-insert into payment values(NULL,1, '2021-04-12', 50000, 4, 3);
-insert into payment values(NULL,3, '2021-05-21', 750000, 1, 3);
-insert into payment values(NULL,4, '2021-06-5', 120000, 2, 4);
-insert into payment values(NULL,5, '2021-07-15', 100000, 1, 5);
+
 
 /* data orders  */
 insert into orders values(NULL,'2021-04-1','2021-04-5', 'Đã giao hàng', 1, 1, 1);
@@ -69,7 +88,15 @@ insert into orderDetail values(5,3,1,3,5);
 insert into orderDetail values(6,3,10,3,6);
 
 
-
+/* data payment */
+insert into payment values(NULL,1, '2021-06-13', 50000, 1 , 1);
+insert into payment values(NULL,2, '2021-07-24', 250000, 2, 2);
+insert into payment values(NULL,3, '2021-07-7', 130000, 2, 1);
+insert into payment values(NULL,2, '2021-05-8', 120000, 3, 2);
+insert into payment values(NULL,1, '2021-04-12', 50000, 4, 3);
+insert into payment values(NULL,3, '2021-05-21', 750000, 1, 3);
+insert into payment values(NULL,4, '2021-06-5', 120000, 2, 4);
+insert into payment values(NULL,5, '2021-07-15', 100000, 1, 5);
 
 
 
