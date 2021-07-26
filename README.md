@@ -11,7 +11,7 @@ Step 2: Run terminal to install all packages
 Step 3: Start project
 `npm start`
 
-Then head on over to `http://localhost:3000` to see it in action.
+Then head on over to `http://localhost:3000/home` to see it in action.
 
 
 
