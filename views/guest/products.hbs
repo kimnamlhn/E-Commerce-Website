@@ -1,3 +1,14 @@
+{{#section 'js'}}
+<script>  $('.detail_button').on('click', function () {
+    const idProduct = $(this).data('idProduct');
+    console.log('hbs page');
+    console.log(idProduct);
+    $('#idProduct').val(idProduct);
+    $('#frmIdProduct').submit();
+  });
+</script>
+{{/section}}
+
 <!-- Page Content -->
 <div class="page-heading products-heading header-text">
   <div class="container">
@@ -19,11 +30,15 @@
     <div class="row">
 
       {{#each list}}
+      <form action="/products/product_detail" id="frmIdProduct" method="GET">
+        <input type="hidden" name="idProduct" id="idProduct" value="{{idProduct}}">
+      </form>
       <div class="col-md-4">
         <div class="product-item">
-          <a href="/products/product_detail"><img src={{this.images}} alt="{{this.name}}"></a>
+          <a href="/products/product_detail" class="detail_button" data-idProduct="{{idProduct}}"><img
+              src={{this.images}} alt="{{this.name}}"></a>
           <div class="down-content">
-            <a href="/products/product_detail">
+            <a href="/products/product_detail" class="detail_button" data-idProduct="{{idProduct}}">
               <h4>{{this.name}}</h4>
             </a>
             <h6>{{this.prince}}đ</h6>
@@ -38,7 +53,8 @@
             <span>Reviews (24)</span>
           </div>
           <div class="mb-3 ml-5">
-            <a class="btn btn-primary" href="/products/product_detail" role="button">
+            <a class="btn btn-primary detail_button" href="/products/product_detail" role="button"
+              data-idProduct="{{idProduct}}">
               <i class="fa fa-info-circle" aria-hidden="true"></i>
               Chi tiết
             </a>

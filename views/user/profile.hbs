@@ -32,6 +32,7 @@
           </div>
         </div>
       </div>
+      {{#with lcAuthUser}}
       <div class="col-md-8">
 
         <div class="card">
@@ -57,7 +58,7 @@
                     <td class="pt-3-half" contenteditable="true">Email</td>
                     <td class="pt-3-half" contenteditable="true">
                       <input type="email" class="form-control" id="editInputEmail" name="email"
-                        placeholder="{{user.email}}">
+                        placeholder="{{email}}">
                     </td>
                     <td>
                       <span class="table-remove"><button type="submit"
@@ -79,7 +80,7 @@
                     <td class="pt-3-half" contenteditable="true">3</td>
                     <td class="pt-3-half" contenteditable="true">Phone</td>
                     <td class="pt-3-half" contenteditable="true">
-                      <input type="text" class="form-control" placeholder="user.phone" id="txtphone" name="phone">
+                      <input type="text" class="form-control" placeholder="{{phone}}" id="txtphone" name="phone">
                     </td>
                     <td>
                       <span class="table-remove"><button type="submit"
@@ -106,6 +107,8 @@
         </div>
         <!--End Edit profile-->
       </div>
+{{/with}}
+
     </div>
   </div>
 </div>

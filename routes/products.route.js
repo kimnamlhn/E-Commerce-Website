@@ -11,11 +11,13 @@ router.get('/', async function (req, res) {
 })
 
 router.get('/product_detail', async function (req, res) {
-
   const similarProduct = await productModel.tripleProduct();
   const product = await productModel.singleTest();
+  const idProduct = req.body.getProduct;
 
-  console.log(similarProduct);
+  // console.log(similarProduct);
+  console.log('idProduct nhan dc');
+  console.log(idProduct);
 
   res.render('guest/product_detail',
     {
