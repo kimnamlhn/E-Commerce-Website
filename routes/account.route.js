@@ -72,4 +72,12 @@ router.post('/register', async function (req, res) {
 });
 
 
+router.post('/logout', async function(req,res){
+    req.session.authenticated = false;
+    req.session.authUser = null; 
+    res.redirect(req.headers.referer);
+
+});
+
+
 module.exports = router;
