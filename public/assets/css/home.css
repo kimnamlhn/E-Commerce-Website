@@ -323,7 +323,7 @@ body {
   
   .banner-item-01 {
 	  padding: 300px 0px;
-	  background-image: url(../images/slide_01.jpg);
+	  background-image: url("../images/slide_01.jpg");
 	  background-size: cover;
 	  background-repeat: no-repeat;
 	  background-position: center center;
@@ -331,7 +331,7 @@ body {
   
   .banner-item-02 {
 	  padding: 300px 0px;
-	  background-image: url(../images/slide_02.jpg);
+	  background-image: url("../images/slide_02.jpg");
 	  background-size: cover;
 	  background-repeat: no-repeat;
 	  background-position: center center;
@@ -339,7 +339,7 @@ body {
   
   .banner-item-03 {
 	  padding: 300px 0px;
-	  background-image: url(../images/slide_03.jpg);
+	  background-image: url("../images/slide_03.jpg");
 	  background-size: cover;
 	  background-repeat: no-repeat;
 	  background-position: center center;
